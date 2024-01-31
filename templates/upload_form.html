@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Audio Processing Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+    background-color: black;
+    color: white;
+    font-size: 30px;
+  }
+  header h1 {
+    font-size: 70px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+  }
+
+input[type="file"]::file-selector-button {
+  border: 2px solid #6c5ce7;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  background-color: #5ae291;
+  transition: 1s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #b13910;
+  border: 2px solid #bb7c17;
+}
+
+button{
+    border-radius: 15px;
+    height: 35px;
+    margin-left: 200px;
+    font-size: 25px;
+}
+
+button:hover{
+    background-color: #6c5ce7;
+}
+  </style>
+</head>
+<body>
+  <header>
+      <h1>Video Audio Processing :::</h1>
+  </header>
+  <form action="/process" method="post" enctype="multipart/form-data">
+    <label for="option">Select a task to Perform:</label>
+    <select class="custom-select" id="option" name="option">
+      <option value="1">Video to audio</option>
+      <option value="2">Video to text</option>
+      <option value="3">Audio to text</option>
+      <option value="4">Video to Subtitle Video</option>
+      <option value="5">Translate Video</option>
+    </select>
+    <br><br>
+    <label for="file" >Upload Video or Audio File:</label>
+    <input type="File" id="File" name="file" accept="audio/*,video/*">
+    <br><br>
+    <button type="submit">Process Files</button>
+  </form>
+</body>
+</html>
